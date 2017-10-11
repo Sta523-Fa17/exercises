@@ -12,7 +12,7 @@ vowel = str_detect(names, "^[AEIOU]")
 not_vowel = str_detect(names, "^[^AEIOU]")
 xor(vowel, not_vowel)
 
-names[vowels]
+names[vowel]
 
 # detect if the person's last name starts with a vowel
 
