@@ -41,21 +41,21 @@ shinyApp(
     observeEvent(input$prior, {
       if (input$prior == input$likelihood)
         updateSelectInput(session, "likelihood", selected = setdiff(colors, c(input$prior, input$posterior)))
-      else
+      if (input$prior == input$posterior)
         updateSelectInput(session, "posterior", selected = setdiff(colors, c(input$prior, input$likelihood)))
     })
     
     observeEvent(input$likelihood, {
       if (input$likelihood == input$prior)
         updateSelectInput(session, "prior", selected = setdiff(colors, c(input$likelihood, input$posterior)))
-      else
+      if (input$likelihood == input$posterior)
         updateSelectInput(session, "posterior", selected = setdiff(colors, c(input$prior, input$likelihood)))
     })
     
     observeEvent(input$posterior, {
       if (input$posterior == input$prior)
         updateSelectInput(session, "prior", selected = setdiff(colors, c(input$posterior, input$likelihood)))
-      else
+      if (input$posterior == input$likelihood)
         updateSelectInput(session, "likelihood", selected = setdiff(colors, c(input$prior, input$posterior)))
     })
     
