@@ -72,7 +72,8 @@ shinyApp(
           color = input$likelihood,
           p = seq(0, 1, length.out=100)
         ) %>%
-          mutate(d = dbinom(input$x, input$n, p)),
+          mutate(d = dbinom(input$x, input$n, p)) %>%
+          mutate(d = d / (sum(d) / n())),
         data_frame(
           dist = "posterior",
           color = input$posterior,
