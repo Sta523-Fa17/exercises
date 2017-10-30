@@ -3,6 +3,8 @@ library(dplyr)
 library(ggplot2)
 library(forcats)
 
+options(shiny.reactlog=TRUE)
+
 colors = c("red","green","blue")
 
 shinyApp(
